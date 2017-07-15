@@ -1,0 +1,17 @@
+    <!-- -create a local variable by using # and name of variable, then assign ngForm, 
+        then connect the form to our component class with the viewChild decorator
+        -the goal here is to be able to clear the form after data is entered
+         -->
+<form (submit)="onSubmit()" #commentForm="ngForm">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" [(ngModel)]="name" />
+    </div>
+    <div>
+        <label for="comment">Comment</label>
+        <textarea name="comment" [(ngModel)]="comment" ></textarea>
+    </div>
+    <div>
+        <button>Submit</button>
+    </div>
+</form>

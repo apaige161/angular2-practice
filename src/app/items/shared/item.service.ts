@@ -13,9 +13,27 @@ import { Http } from '@angular/http';
 
 export class ItemService {
 
-     constructor(private http: Http){
-            
-        }
+    constructor(private http: Http){    
+    }
+    
+    //post data to the server
+    addComment(itemId: number, comment: { name: string; comment: string; }) {
+        return this.http.post('/app/items/${itemId}/comments', comment)
+            .toPromise();
+    }
+
+    addModel(model: string){
+        return this.http.post('/app/items/', model)
+            .toPromise();
+    }
+
+    addSerialNumber(serialNumber: string){
+        return this.http.post('/app/items/', serialNumber)
+            .toPromise();
+    }
+
+
+
 
     getItems(): Promise<Item[]> { //will return a promise, array of objects
         return this.http.get('/app/items')

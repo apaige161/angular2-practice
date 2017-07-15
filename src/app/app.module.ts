@@ -29,7 +29,8 @@ import { FormsModule } from '@angular/forms';
 
 //import custom components
 import { AppComponent } from './app.component';
-import { ItemListComponent, ItemComponent, ItemService } from './items'; //everything is imported from a barrel file (index.ts)
+import { CreateSaw } from './items/new-item/new-item.component'; 
+import { ItemListComponent, ItemComponent, ItemService, ItemCommentFormComponent } from './items'; //everything is imported from a barrel file (index.ts)
 import { InMemoryItemService } from './backend'; //loads in our InMemoryDbService which has seeded data
 
 //the decorator
@@ -38,7 +39,9 @@ import { InMemoryItemService } from './backend'; //loads in our InMemoryDbServic
     imports: [
         BrowserModule,
         HttpModule,
+        FormsModule,
         InMemoryWebApiModule.forRoot(InMemoryItemService) //wont be using for a production product
+
         ],
     //the providers property is angular's special place for services
     providers:[ItemService],
@@ -46,7 +49,9 @@ import { InMemoryItemService } from './backend'; //loads in our InMemoryDbServic
     declarations: [
         AppComponent,
         ItemComponent, //put child components first!!
-        ItemListComponent
+        ItemListComponent,
+        ItemCommentFormComponent,
+        CreateSaw
         ],  //'declarations' registering all of our app's components
     bootstrap: [AppComponent] //generally only put the parents component in the bootstrap
 })

@@ -1,0 +1,26 @@
+
+
+
+<!--from item-comment-form -->
+
+<form (submit)="onSubmit()" #newChainsawaw="ngForm">
+    <div>
+        <label for="model">Model</label>
+        <input type="text" name="model" [(ngModel)]="model" />
+    </div>
+
+    <div>
+        <label for="serialNumber">Serial Number</label>
+        <input type="text" name="serialNumber" [(ngModel)]="serialNumber" />
+    </div>
+
+    <div>
+        <label for="comment">Comment</label>
+        <textarea name="comment" [(ngModel)]="comment" ></textarea>
+    </div>
+
+    <div>
+        <button>Submit</button>
+    </div>
+
+</form>

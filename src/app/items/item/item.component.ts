@@ -7,7 +7,15 @@ import { Item } from '../shared/item.model'
     styleUrls: ['item.component.css']
 })
 
+
+
 export class ItemComponent {
     //we will get an error without the input decorator
    @Input() item: Item;
+
+   onCommentAdded(comment: {name: string; comment: string;}){
+       this.item.comments.push(comment);
+
+   }
 }
+

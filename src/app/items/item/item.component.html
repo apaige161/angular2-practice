@@ -7,27 +7,11 @@
        <h3>Maintainence log: </h3>
        <button type="button" (click) = "showComments = !showComments">Comments ({{item.comments.length}})</button>
     </div>
-    <div class="logs" *ngIf="showComments">
-        <div class= "log" *ngFor="let log of item.logs">
-            <p><strong>{{log.name}}</strong> {{log.log}}</p>
-        </div>
-    </div>
-</div>
-<br>
-
-<h3>{{item.title}}</h3>
-<figure>
-    <img class="img" src="{{photo}}">
-    <figcaption>{{item.description}}</figcaption>
-</figure>
-
-<div class="actions">
-    <button type="button" (click) = "isLiked = !isliked" [ngClass]="{liked: isLiked}">❤</button>
-    <button type="button" (click) = "showComments = !showComments">Comments ({{item.comments.length}})</button>
-</div>
-
-<div class="comments" *ngIf="showComments">
+    <div class="comments" *ngIf="showComments">
     <div class= "comment" *ngFor="let comment of item.comments">
         <p><strong>{{comment.name}}</strong> {{comment.comment}}</p>
     </div>
-</div>
+        <app-item-comment-form (onCommentAdded)="onCommentAdded($event)" [itemId]="item.id"></app-item-comment-form>
+    </div>
+
+  <new-item></new-item>
