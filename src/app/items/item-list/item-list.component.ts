@@ -22,8 +22,8 @@ export class ItemListComponent implements OnInit {
     ngOnInit(){
         //setting the itemService
         this.itemService.getItems()
-                        .then(function(items){
+                        .then(items => 
                             this.items = items
-                        });
+                        );
     }
 }
