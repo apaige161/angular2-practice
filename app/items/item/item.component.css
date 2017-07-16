@@ -1,0 +1,38 @@
+figure {
+    margin: 0;
+    border: 1px solid #000;
+    position: relative;
+
+}
+
+.img{
+    min-height: 400px;
+    height: auto;
+    width: 100%;
+    display: block;
+
+}
+
+figcaption{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 1.2em;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+:host {
+    padding: 1em;
+    display: block;
+}
+
+.actions, .saws{
+    padding: 1em 0;
+}
+
+.liked{
+    color: red;
+}

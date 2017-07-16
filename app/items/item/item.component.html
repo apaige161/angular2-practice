@@ -1,0 +1,17 @@
+
+<div class = "saws">
+
+    <new-item></new-item>
+    <div class="actions">
+       <h3>Maintainence log: </h3>
+       <button type="button" (click) = "showComments = !showComments">Comments ({{item.comments.length}})</button>
+    </div>
+
+    <div class="comments" *ngIf="showComments">
+    <div class= "comment" *ngFor="let comment of item.comments">
+        <p><strong>{{comment.name}}</strong> {{comment.comment}}</p>
+    </div>
+        <app-item-comment-form (onCommentAdded)="onCommentAdded($event)" [itemId]="item.id"></app-item-comment-form>
+    </div>
+
+

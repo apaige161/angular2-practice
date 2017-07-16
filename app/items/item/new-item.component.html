@@ -1,0 +1,15 @@
+
+<h1>Saws</h1>
+<div id = "new saw" >
+
+    <input #model placeholder="Model" />
+    <input #serial placeholder="Serial Number" />
+    <button (click)="addSaw(model.value,serial.value)">Add Saw</button>
+
+    <table>
+        <tr *ngFor="let saw of saws" style="margin-bottom: 10px;">
+            <td>{{saw.descr}}</td> <td><button (click)="removeSaw(saw)">Delete</button></td>
+        </tr>
+    </table>
+
+</div>
